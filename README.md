@@ -123,10 +123,6 @@ We provide a model checkpoint at training step 780 on HuggingFace and Modelscope
 from transformers import pipeline
 
 pipe = pipeline("text-generation", model="SphereLab/SGP-RL")
-messages = [
-    {"role": "user", "content": "Who are you?"},
-]
-pipe(messages)
 ```
 
 ```python
