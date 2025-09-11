@@ -117,12 +117,14 @@ Evaluation on SGP-CompBench:
 
 ## Checkpoint Downloading
 We provide a model checkpoint at training step 780 on Modelscope:
+
 Download via python SDK:
 ```python
 from modelscope import snapshot_download
 model_dir = snapshot_download('NOrangeroli/SGP_RL')
 ```
-Download via git
+
+Download via git:
 ```bash
 git clone https://www.modelscope.cn/NOrangeroli/SGP_RL.git
 ```
