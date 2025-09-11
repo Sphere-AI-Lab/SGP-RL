@@ -116,9 +116,19 @@ Evaluation on SGP-CompBench:
 
 
 ## Checkpoint Downloading
-We provide a model checkpoint at training step 780 on Modelscope:
+We provide a model checkpoint at training step 780 on HuggingFace and Modelscope:
 
-Download via python SDK:
+```python
+# Use a pipeline as a high-level helper
+from transformers import pipeline
+
+pipe = pipeline("text-generation", model="SphereLab/SGP-RL")
+messages = [
+    {"role": "user", "content": "Who are you?"},
+]
+pipe(messages)
+```
+
 ```python
 from modelscope import snapshot_download
 model_dir = snapshot_download('NOrangeroli/SGP_RL')
@@ -126,6 +136,7 @@ model_dir = snapshot_download('NOrangeroli/SGP_RL')
 
 Download via git:
 ```bash
+git clone https://huggingface.co/SphereLab/SGP-RL
 git clone https://www.modelscope.cn/NOrangeroli/SGP_RL.git
 ```
 
