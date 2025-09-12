@@ -136,6 +136,19 @@ git clone https://huggingface.co/SphereLab/SGP-RL
 git clone https://www.modelscope.cn/NOrangeroli/SGP_RL.git
 ```
 
+## Interactive Inference
+
+We provide a script for interactively run the model:
+
+```bash
+python interactive_inference.py --model your/model/path
+```
+
+Always prompt in the following form:
+
+```bash
+Please write SVG code for generating the image corresponding to the following description: YOUR_DESCRIPTION
+```
 
 ## Acknowledgement
 This code is based on [understand-r1-zero](https://github.com/sail-sg/understand-r1-zero).
