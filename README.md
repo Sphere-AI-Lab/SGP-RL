@@ -35,6 +35,12 @@ We provide a requirements.txt recording the version informations for reference.
 
 ## Quick Start
 
+### Hardware Requirements
+
+We did the experiment with Qwen/Qwen2.5-7B on a 8xH100 node, the mininum requirement is a 8xA100 node.
+
+For the expeirmnt with Qwen/Qwen2.5-3B, we are able to run the experiments on a 8xL40 node.
+
 ### Prepare Datasets
 
 #### Automatically Download All Required Data
