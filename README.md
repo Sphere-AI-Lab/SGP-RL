@@ -35,6 +35,12 @@ We provide a requirements.txt recording the version informations for reference.
 
 ## Quick Start
 
+### Hardware Requirements
+
+We did the experiment with Qwen/Qwen2.5-7B on a 8xH100 node, the mininum requirement is a 8xA100 node.
+
+For the experiments with Qwen/Qwen2.5-3B, we are able to run them on a 8xL40 node.
+
 ### Prepare Datasets
 
 #### Automatically Download All Required Data
@@ -75,7 +81,7 @@ You should have:
     ...
 
 2) setup the svg training data:
-download the dataset file at https://huggingface.co/datasets/SphereLab/SGP-Gen-70k/resolve/main/svg-gen-70k.jsonl
+download the dataset file at https://huggingface.co/datasets/SphereLab/SGP-Gen-70k/resolve/main/MMSVG-Illustration-40k.jsonl
 
 Put it into YOUR_SVG_DIR and setup environment variables:
 ```bash
@@ -115,7 +121,7 @@ Evaluation on SGP-CompBench:
 [sgp-compbench](sgp-compbench/)
 
 
-## Checkpoint Downloading
+## Checkpoint
 We provide a model checkpoint at training step 780 on HuggingFace and Modelscope:
 
 ```python
