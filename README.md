@@ -81,7 +81,7 @@ You should have:
     ...
 
 2) setup the svg training data:
-download the dataset file at https://huggingface.co/datasets/SphereLab/SGP-Gen-70k/resolve/main/svg-gen-70k.jsonl
+download the dataset file at https://huggingface.co/datasets/SphereLab/SGP-Gen-70k/resolve/main/MMSVG-Illustration-40k.jsonl
 
 Put it into YOUR_SVG_DIR and setup environment variables:
 ```bash
