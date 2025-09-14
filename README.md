@@ -39,7 +39,7 @@ We provide a requirements.txt recording the version informations for reference.
 
 We did the experiment with Qwen/Qwen2.5-7B on a 8xH100 node, the mininum requirement is a 8xA100 node.
 
-For the expeirmnt with Qwen/Qwen2.5-3B, we are able to run the experiments on a 8xL40 node.
+For the experiments with Qwen/Qwen2.5-3B, we are able to run them on a 8xL40 node.
 
 ### Prepare Datasets
 
@@ -121,7 +121,7 @@ Evaluation on SGP-CompBench:
 [sgp-compbench](sgp-compbench/)
 
 
-## Checkpoint Downloading
+## Checkpoint
 We provide a model checkpoint at training step 780 on HuggingFace and Modelscope:
 
 ```python
