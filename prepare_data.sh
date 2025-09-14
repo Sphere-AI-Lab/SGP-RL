@@ -177,17 +177,17 @@ echo "✓ COCO 2017 ready at $COCO_DIR"
 # 2) Setup SVG training data (SGP-Gen-70k)
 # -----------------------------
 echo ""
-echo "=== [2/3] Downloading SGP-Gen-70k (svg-gen-70k.jsonl) ==="
-SGP_GEN_URL="https://docs.google.com/uc?export=download&id=1zoIoMYS4mvoXxUQP1HMb-aK3BHNF06hl"
-SGP_GEN_OUT="$SVG_DIR/svg-gen-70k.jsonl"
+echo "=== [2/3] Downloading MMSVG-Illustration-40k (MMSVG-Illustration-40k.jsonl) ==="
+SGP_GEN_URL="https://docs.google.com/uc?export=download&id=1eStLujbYZ3bMm8K5m6IIsQZt_kFvLf-s"
+SGP_GEN_OUT="$SVG_DIR/MMSVG-Illustration-40k.jsonl"
 
 if [[ ! -f "$SGP_GEN_OUT" ]]; then
-  echo "→ Fetching svg-gen-70k.jsonl ..."
+  echo "→ Fetching MMSVG-Illustration-40k.jsonl ..."
   fetch "$SGP_GEN_URL" "$SGP_GEN_OUT"
 else
   echo "✓ Found $SGP_GEN_OUT (skipping download)"
 fi
-echo "✓ SGP-Gen-70k ready at $SGP_GEN_OUT"
+echo "✓ MMSVG-Illustration-40k ready at $SGP_GEN_OUT"
 
 # -----------------------------
 # 3) Prepare SGP-Single-9k eval (SGP-Object)
