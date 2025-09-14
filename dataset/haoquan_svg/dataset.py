@@ -16,7 +16,7 @@ class HQSVGDataset:
     def load_dataset(
         dataset_name: str,
         dataset_config: Optional[Dict[str, Any]] = None,
-        dataset_path: str="/home/chenyamei/data/haoquan_svg/svg-gen-70k.jsonl",
+        dataset_path: str="/home/chenyamei/data/haoquan_svg/MMSVG-Illustration-40k.jsonl",
         test_split_ratio: float = 0.0,  
         max_train_samples: Optional[int] = -1,
         max_test_samples: Optional[int] = -1,
@@ -56,7 +56,7 @@ class HQSVGDataset:
                 f"HQSVG_DIR points to '{hqsvg_dir}', which doesn't exist. "
                 "Set HQSVG_DIR or create the directory."
             )
-        dataset_path = str(hqsvg_dir / "svg-gen-70k.jsonl")
+        dataset_path = str(hqsvg_dir / "MMSVG-Illustration-40k.jsonl")
         # Load from JSONL file
         if os.path.isdir(dataset_path):
             # If a directory, look for jsonl files
@@ -96,11 +96,16 @@ class HQSVGDataset:
             dataset['train'] = dataset['train'].filter(
                 lambda example: example.get('overall_complexity', 0) > complexity_threshold
             )
+            print(f"After filtering out low complexity content: {len(dataset['train'])} examples")
+        
+
+
+    
         
         # Shuffle the dataset before splitting
         dataset['train'] = dataset['train'].shuffle(seed=seed)
         
-        # Split into train and test (80/20 split by default)
+        
         if test_split_ratio > 0:
             dataset = dataset['train'].train_test_split(test_size=test_split_ratio, seed=seed)
         else:
@@ -176,7 +181,7 @@ class HQSVGDatasetSFT:
     def load_dataset(
         dataset_name: str,
         dataset_config: Optional[Dict[str, Any]] = None,
-        dataset_path: str="/home/chenyamei/data/haoquan_svg/svg-gen-70k.jsonl",
+        dataset_path: str="/home/chenyamei/data/haoquan_svg/MMSVG-Illustration-40k.jsonl",
         test_split_ratio: float = 0.0,  
         max_train_samples: Optional[int] = -1,
         max_test_samples: Optional[int] = -1,
@@ -314,16 +319,16 @@ if __name__ == "__main__":
     # Load the dataset
     dataset = HQSVGDataset.load_dataset(
         'haoquan_svg',
-        dataset_path="/home/chenyamei/data/haoquan_svg/svg-gen-70k.jsonl",
+        dataset_path="/home/chenyamei/data/haoquan_svg/MMSVG-Illustration-40k.jsonl",
         test_split_ratio=0.0,
         max_train_samples=-1,
         filter_successful_only=True,
-        complexity_threshold=0.0  # Only examples with complexity > 5
+        complexity_threshold=None  
     )
 
     # Print dataset statistics
     print(f"Train examples: {len(dataset['train'])}")
     print(f"Test examples: {len(dataset['test'])}")
-    print(dataset['train'][0])
+    # print(dataset['train'][0])
     # Show sample entry
     # print(dataset['train'].filter(lambda x: 'Gray distorted and mirrored text creates a cryptic eye chart illusion.' in x['description'])[0]['svg'])
